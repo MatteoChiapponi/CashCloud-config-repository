@@ -10,11 +10,6 @@ spring:
             - Path=/users
           filters:
             - AddResponseHeader=X-Response-generated-by, gateway
-    config:
-        import: "optional:configserver:"
-        discovery:
-          enabled: true
-          serviceId: configuration-server
   application:
     name: gateway-service
 server:
@@ -43,4 +38,4 @@ management:
 info:
   app:
     name: gateway-service
-    description: This gateway is responsible for redirecting each request to the corresponding MS (gh)
+    description: This gateway is responsible for redirecting each request to the corresponding MS
