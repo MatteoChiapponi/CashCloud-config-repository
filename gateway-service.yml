@@ -21,9 +21,11 @@ eureka:
     statusPageUrlPath: http://localhost:9090/actuator/info
     healthCheckUrlPath: http://localhost:9090/actuator/health
 
-
 #actuator
 management:
+  tracing:
+    sampling:
+      probability: 1.0
   endpoints:
     web:
       exposure:
