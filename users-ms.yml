@@ -1,0 +1,37 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/users_ms
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+server:
+  port: 8081
+
+eureka:
+  instance:
+    hostname: localhost
+    statusPageUrlPath: http://localhost:8081/actuator/info
+    healthCheckUrlPath: http://localhost:8081/actuator/health
+
+#actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health
+  info:
+    java:
+      enabled: true
+    os:
+      enabled: true
+    env:
+      enabled: true
+info:
+  app:
+    name: users-ms
+    description: This microservice is responsible for responding to each user use case.
