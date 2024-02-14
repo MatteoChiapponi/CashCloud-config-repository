@@ -12,7 +12,7 @@ spring:
         - id: users-service
           uri: lb://users-service
           predicates:
-            - Path=/users
+            - Path=/api/users
           filters:
             - AddResponseHeader=X-Response-generated-by, gateway
   application:
