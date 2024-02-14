@@ -8,7 +8,8 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-    
+  application:
+    name: users-service
 server:
   port: 8081
 
