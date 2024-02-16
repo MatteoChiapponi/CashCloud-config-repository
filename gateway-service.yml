@@ -12,9 +12,9 @@ spring:
         - AddRequestHeader=X-Request-from, gateway-service
       routes:
         - id: users-service
-          uri: http://localhost:8081/
+          uri: lb://users-service
           predicates:
-            - Path=/api/users
+            - Path=/api/users/
           filters:
             - AddResponseHeader=X-Response-generated-by, gateway
   application:
