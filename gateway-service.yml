@@ -15,6 +15,7 @@ spring:
           uri: lb://users-service
           predicates:
             - Path=/api/users/**
+            - Method=GET,POST
           filters:
             - AddResponseHeader=X-Response-generated-by, gateway
   application:
