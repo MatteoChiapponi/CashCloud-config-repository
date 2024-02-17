@@ -44,5 +44,5 @@ management:
       enabled: true
 info:
   app:
-    name: users-ms
+    name: users-service
     description: This microservice is responsible for responding to each user use case.
