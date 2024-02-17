@@ -30,5 +30,5 @@ management:
       enabled: true
 info:
   app:
-    name: notifications-ms
+    name: notifications-service
     description: This microservice is responsible for responding to each use case that needs to be notified.
