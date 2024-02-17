@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: notifications-service
+server:
+  port: 8082
+
+eureka:
+  instance:
+    hostname: localhost
+    statusPageUrlPath: http://localhost:8082/actuator/info
+    healthCheckUrlPath: http://localhost:8082/actuator/health
+
+#actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, beans
+  info:
+    java:
+      enabled: true
+    os:
+      enabled: true
+    env:
+      enabled: true
+info:
+  app:
+    name: notifications-ms
+    description: This microservice is responsible for responding to each use case that needs to be notified.
