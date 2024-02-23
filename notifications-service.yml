@@ -6,16 +6,31 @@ spring:
     port: 5672
     username: guest
     password: guest
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: cashcloud.noreply@gmail.com
+    password: glni eqzx tosu mnkj
+    # TLS/SSL
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: false
+            required: false
+          ssl:
+            enable: true
+            
 server:
   port: 8082
-
+  
 eureka:
   instance:
     hostname: localhost
     statusPageUrlPath: http://localhost:8082/actuator/info
     healthCheckUrlPath: http://localhost:8082/actuator/health
 
-#actuator
 management:
   endpoints:
     web:
