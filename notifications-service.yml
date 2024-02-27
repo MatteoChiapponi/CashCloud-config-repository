@@ -10,7 +10,7 @@ spring:
     host: smtp.gmail.com
     port: 465
     username: cashcloud.noreply@gmail.com
-    password: glni eqzx tosu mnkj
+    password: wsdq rmmz lkju tggz
     # TLS/SSL
     properties:
       mail:
