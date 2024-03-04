@@ -30,6 +30,9 @@ eureka:
     healthCheckUrlPath: http://localhost:8081/actuator/health
 #actuator
 management:
+  tracing:
+    sampling:
+      probability: 1.0
   endpoints:
     web:
       exposure:
