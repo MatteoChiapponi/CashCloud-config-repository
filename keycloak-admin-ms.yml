@@ -1,1 +1,41 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/CashCloud_realm
+  application:
+    name: keycloak-manager-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+server:
+  port: 8083
 
+eureka:
+  instance:
+    hostname: localhost
+    statusPageUrlPath: http://localhost:8083/actuator/info
+    healthCheckUrlPath: http://localhost:8083/actuator/health
+#actuator
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: info, health, beans
+  info:
+    java:
+      enabled: true
+    os:
+      enabled: true
+    env:
+      enabled: true
+info:
+  app:
+    name: keycloak-manager-service
+    description: This microservice is responsible for responding to each keycloak use case.
