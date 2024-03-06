@@ -19,12 +19,6 @@ eureka:
     hostname: localhost
     statusPageUrlPath: http://localhost:8083/actuator/info
     healthCheckUrlPath: http://localhost:8083/actuator/health
-    
-keycloak:
-  realm: CashCloud_realm
-  clientSecret: AQCgcVjKkkC38wDILaNnLYtIObFUFbMf
-  serverUrl: http://localhost:8080/
-  clientId: api-users-ms
   
 #actuator
 management:
