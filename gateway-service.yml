@@ -9,15 +9,19 @@ spring:
   cloud:
     gateway:
       default-filters:
-        - AddRequestHeader=X-Request-from, gateway-service
+        - AddRequestHeader=X-Request-generated-by, gateway-service
+        - AddResponseHeader=X-Response-generated-by, gateway-service
       routes:
         - id: users-service
           uri: lb://users-service
           predicates:
             - Path=/api/users/**
             - Method=GET,POST
-          filters:
-            - AddResponseHeader=X-Response-generated-by, gateway
+        - id: keycloak-manager-service
+          uri: lb://keycloak-manager-service
+          predicates:
+            - Path=/api/keycloak/**
+            - Method=GET,POST
   application:
     name: gateway-service
 server:
