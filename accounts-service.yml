@@ -1,0 +1,50 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/CashCloud_realm
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://localhost:3306/accounts_test_ms
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: accounts-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+server:
+  port: 8084
+
+eureka:
+  instance:
+    hostname: localhost
+    statusPageUrlPath: http://localhost:8084/actuator/info
+    healthCheckUrlPath: http://localhost:8084/actuator/health
+#actuator
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: info, health, beans
+  info:
+    java:
+      enabled: true
+    os:
+      enabled: true
+    env:
+      enabled: true
+info:
+  app:
+    name: accounts-service
+    description: This microservice is responsible for responding to each user account use case.
